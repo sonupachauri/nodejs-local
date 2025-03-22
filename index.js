@@ -4,6 +4,9 @@ const app = express();
 const port = process.env.PORT || 3000;
 const contactroutes = require("./routes/contactRoutes");
 const errorHandler = require("./middleware/errorHandler");
+const connectDb = require("./config/dbConnection")
+
+connectDb();
 
 app.listen(port,()=>{
     console.log(`server is running on port ${port}`)
